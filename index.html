@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>AeroMexico</title>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="/img/logo.png" alt="aeromx_logo"></a>
+
+        <nav>
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li> <a href="">Destinos</a></li>
+                <li> <a href="" class="active">Boletos</a></li>
+                <li><a href="">Contacto</a></li>
+                <li> <a href="">Quiénes somos</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main class="main_container">
+        
+        <form action="php/guardar.php" class="formulario" method="POST">
+            <h2>Hagámoslo oficial, viaja con AeroMéxico ya!</h2>
+            <label for="cliente"><p>Cliente</p></label>
+            <input type="text" id="cliente" name="cliente" maxlength="40" required>
+    
+            <label for="boleto"><p>Boleto</p></label>
+            <input type="text" id="boleto" name="boleto" maxlength="5" required>
+    
+            <label for="destino"><p>Destino</p></label>
+            <input type="text" id="destino" name="destino" maxlength="40" required><br>
+    
+            <div class="container_submit">
+                <a href="#">Términos y Condiciones</a>
+                <button class="submit" type="submit">Enviar Datos</button>
+            </div>
+        </form>
+    </main>
+
+</body>
+</html>
