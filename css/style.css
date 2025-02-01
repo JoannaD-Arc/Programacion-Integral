@@ -149,3 +149,28 @@ input{
     font-size: 1rem;
     color: rgb(39, 53, 99);
 }
+
+.body_gracias{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+.gracias_main{
+    text-align: center;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1.5rem;
+}
+.gracias_main h1{
+    margin-bottom: 1rem;
+}
+
+i{
+    font-size: large;
+    margin: 2rem 0rem;
+}
+
+h4{
+    margin-top: 1rem;
+}

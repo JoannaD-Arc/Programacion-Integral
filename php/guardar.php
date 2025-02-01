@@ -13,7 +13,8 @@
 
         if($stmt->execute()){
             echo " Boleto registrado correctamente.";
-            header("Location: /211283_AeroMexico/index.html");
+            header("Location: http://pi-uacj-211283.infinityfreeapp.com/gracias.html");
+            exit(); // Detener ejecución
         }else
         {
             echo "Error al registrar: " . $stmt->error;

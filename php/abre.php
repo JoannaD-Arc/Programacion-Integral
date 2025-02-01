@@ -1,8 +1,8 @@
 <?php
-    $servidor = "localhost";
-    $usuario = "root";
-    $password = "";
-    $db = "aeromexico_db";
+    $servidor = "sql108.infinityfree.com";
+    $usuario = "if0_38223498";
+    $password = "FarnhamUCA2025";
+    $db = "if0_38223498_aeromexico_db";
     
     
     
