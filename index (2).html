@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Radio DB</title>
+</head>
+<body>
+    <header>
+        <h1>Radio DataBase</h1>
+    </header>
+
+    <main class="main_container">
+        <form action="guardar.php" class="formulario" method="POST">
+            <h2>Información de la Radio CONSULTA de Inserción</h2>
+
+            <!-- Campos para la tabla Cabina -->
+            <label for="nombre_cabina"><p>Nombre de la Cabina</p></label>
+            <input type="text" id="nombre_cabina" name="nombre_cabina" maxlength="100" required>
+
+            <label for="ubicacion"><p>Ubicación de la Cabina</p></label>
+            <input type="text" id="ubicacion" name="ubicacion" maxlength="255" required>
+
+            <label for="capacidad"><p>Capacidad de la Cabina</p></label>
+            <input type="number" id="capacidad" name="capacidad" required>
+
+            <!-- Campos para la tabla Frecuencia -->
+            <label for="banda"><p>Banda (FM/AM)</p></label>
+            <input type="text" id="banda" name="banda" maxlength="50" required>
+
+            <label for="frecuencia"><p>Frecuencia</p></label>
+            <input type="number" id="frecuencia" name="frecuencia" step="0.01" required>
+
+            <label for="estacion"><p>Nombre de la Estación</p></label>
+            <input type="text" id="estacion" name="estacion" maxlength="100" required>
+
+            <!-- Campos para la tabla Locutores -->
+            <label for="nombre_locutor"><p>Nombre del Locutor</p></label>
+            <input type="text" id="nombre_locutor" name="nombre_locutor" maxlength="100" required>
+
+            <label for="apellido_locutor"><p>Apellido del Locutor</p></label>
+            <input type="text" id="apellido_locutor" name="apellido_locutor" maxlength="100" required>
+
+            <label for="experiencia"><p>Años de Experiencia</p></label>
+            <input type="number" id="experiencia" name="experiencia" required>
+
+            <!-- Campos para la tabla Musica -->
+            <label for="titulo_musica"><p>Título de la Canción</p></label>
+            <input type="text" id="titulo_musica" name="titulo_musica" maxlength="100" required>
+
+            <label for="artista"><p>Artista</p></label>
+            <input type="text" id="artista" name="artista" maxlength="100" required>
+
+            <label for="genero"><p>Género Musical</p></label>
+            <input type="text" id="genero" name="genero" maxlength="50" required>
+
+            <label for="duracion"><p>Duración (HH:MM:SS)</p></label>
+            <input type="time" id="duracion" name="duracion" step="1" required>
+
+            <div class="container_submit">
+                <a href="#">Términos y Condiciones</a>
+                <button class="submit" type="submit">Enviar Datos</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
