@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container-all">
+        <!-- Inputs de control (ocultos pero funcionales) -->
+        <input type="radio" name="image-slide" id="1" checked>
+        <input type="radio" name="image-slide" id="2">
+        <input type="radio" name="image-slide" id="3">
+        <input type="radio" name="image-slide" id="4">
+        <input type="radio" name="image-slide" id="5">
+
+        <!-- Carrusel principal -->
+        <div class="slider">
+            <div class="item-slide">
+                <img src="img/1.jpg" alt="Imagen 1">
+            </div>
+            <div class="item-slide">
+                <img src="img/2.jpg" alt="Imagen 2">
+            </div>
+            <div class="item-slide">
+                <img src="img/3.jpg" alt="Imagen 3">
+            </div>
+            <div class="item-slide">
+                <img src="img/4.jpg" alt="Imagen 4">
+            </div>
+            <div class="item-slide">
+                <img src="img/5.jpg" alt="Imagen 5">
+            </div>
+        </div>
+
+        <!-- Miniaturas -->
+        <div class="pagina">
+            <label class="pagina-item" for="1">
+                <img src="img/1.jpg" alt="Miniatura 1">
+            </label>
+            <label class="pagina-item" for="2">
+                <img src="img/2.jpg" alt="Miniatura 2">
+            </label>
+            <label class="pagina-item" for="3">
+                <img src="img/3.jpg" alt="Miniatura 3">
+            </label>
+            <label class="pagina-item" for="4">
+                <img src="img/4.jpg" alt="Miniatura 4">
+            </label>
+            <label class="pagina-item" for="5">
+                <img src="img/5.jpg" alt="Miniatura 5">
+            </label>
+        </div>
+    </div>
+
+    <!-- Script de JavaScript -->
+    <script>
+      // Para controlar el carrusel con los radio buttons
+      const radios = document.querySelectorAll('input[type="radio"]');
+      const slider = document.querySelector('.slider');
+  
+      // Función para actualizar la posición del slider
+      function updateSliderPosition(index) {
+          const offset = index * -100;  // Cada imagen ocupa 100%
+          slider.style.transform = `translateX(${offset}%)`;
+      }
+  
+      // Función para cambiar de imagen automáticamente
+      let currentIndex = 0; // Índice de la imagen actual
+      const totalImages = radios.length; // Número total de imágenes
+  
+      function autoplay() {
+          currentIndex = (currentIndex + 1) % totalImages; // Cicla entre las imágenes
+          radios[currentIndex].checked = true; // Marca el radio correspondiente
+          updateSliderPosition(currentIndex); // Actualiza la posición del slider
+      }
+  
+      // Inicia el autoplay cada 4 segundos
+      let autoplayInterval = setInterval(autoplay, 4000); 
+  
+      radios.forEach((radio, index) => {
+          radio.addEventListener('change', () => {
+              currentIndex = index; // Actualiza el índice actual
+              updateSliderPosition(index);
+              // Reinicia el intervalo para evitar cambios durante la interacción del usuario
+              clearInterval(autoplayInterval);
+              autoplayInterval = setInterval(autoplay, 4000);
+          });
+      });
+  
+      // Asegurarse de que la primera imagen esté en la posición correcta al cargar
+      updateSliderPosition(0);
+  </script>
+</body>
+</html>
